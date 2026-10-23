@@ -1992,7 +1992,10 @@ void retro_init(void)
         // RPCS3_VK_READBACK=1 keeps the copy, for comparing the two.
         const char* readback = std::getenv("RPCS3_VK_READBACK");
         if (!(readback && *readback == '1') && setup_vulkan_hw_render())
+        {
             g_libretro_vulkan_hw = true;
+            g_libretro_software_present = false;
+        }
         else
         {
             if (log_cb)

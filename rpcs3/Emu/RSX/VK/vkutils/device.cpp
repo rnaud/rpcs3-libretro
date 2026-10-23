@@ -484,7 +484,7 @@ namespace vk
 	// Render Device - The actual usable device
 	void render_device::create(vk::physical_device& pdev, u32 graphics_queue_idx, u32 present_queue_idx, u32 transfer_queue_idx)
 	{
-		float queue_priorities[1] = { 0.f };
+		float queue_priorities[2] = { 0.f, 0.f };
 		pgpu = &pdev;
 
 		ensure(graphics_queue_idx == present_queue_idx || present_queue_idx == umax); // TODO
